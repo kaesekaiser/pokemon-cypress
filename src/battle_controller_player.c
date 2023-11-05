@@ -36,6 +36,8 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "graphics.h"
+#include "menu.h"
 
 static void PlayerBufferExecCompleted(u32 battler);
 static void PlayerHandleLoadMonSprite(u32 battler);
@@ -90,6 +92,8 @@ static void Task_SetControllerToWaitForString(u8);
 static void Task_GiveExpWithExpBar(u8);
 static void Task_UpdateLvlInHealthbox(u8);
 static void PrintLinkStandbyMsg(void);
+static void MoveSelectionDisplayTypeIcon(u8);
+static void MoveSelectionDisplaySplitIcon(u8);
 
 static void ReloadMoveNames(u32 battler);
 
@@ -1673,8 +1677,17 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     *(txtPtr)++ = EXT_CTRL_CODE_FONT;
     *(txtPtr)++ = FONT_NORMAL;
 
-    StringCopy(txtPtr, gTypeNames[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[battler]]].type]);
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+    MoveSelectionDisplayTypeIcon(gBattleMoves[moveInfo->moves[gMoveSelectionCursor[battler]]].type);
+	MoveSelectionDisplaySplitIcon(battler);
+}
+
+static void MoveSelectionDisplayTypeIcon(u8 type)
+{
+    ListMenuLoadStdPalAt(BG_PLTT_ID(12), 1);
+	PutWindowTilemap(B_WIN_MOVE_TYPE);
+    FillWindowPixelBuffer(B_WIN_MOVE_TYPE, PIXEL_FILL(15));
+    BlitMenuInfoIcon(B_WIN_MOVE_TYPE, type + 1, 16, 2);
+	CopyWindowToVram(B_WIN_MOVE_TYPE, COPYWIN_FULL);
 }
 
 void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
@@ -2231,4 +2244,18 @@ static void PlayerHandleBattleDebug(u32 battler)
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
     SetMainCallback2(CB2_BattleDebugMenu);
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+}
+
+static void MoveSelectionDisplaySplitIcon(u8 battler){
+	static const u16 sSplitIcons_Pal[] = INCBIN_U16("graphics/interface/split_icons_battle.gbapal");
+	static const u8 sSplitIcons_Gfx[] = INCBIN_U8("graphics/interface/split_icons_battle.4bpp");
+	struct ChooseMoveStruct *moveInfo;
+	int icon;
+
+	moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
+	icon = GetBattleMoveSplit(moveInfo->moves[gMoveSelectionCursor[battler]]);
+	LoadPalette(sSplitIcons_Pal, 10 * 0x10, 0x20);
+	BlitBitmapToWindow(B_WIN_PSS_ICON, sSplitIcons_Gfx + 0x80 * icon, 0, 0, 16, 16);
+	PutWindowTilemap(B_WIN_PSS_ICON);
+	CopyWindowToVram(B_WIN_PSS_ICON, 3);
 }
