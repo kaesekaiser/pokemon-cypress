@@ -137,6 +137,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	giveitem ITEM_INFINITE_CANDY, 1
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_InfiniteCandy, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
@@ -720,7 +722,14 @@ LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "PROF. BIRCH: Great!\n"
 	.string "{RIVAL} should be happy, too.\p"
 	.string "Get {RIVAL} to teach you what it\n"
-	.string "means to be a TRAINER.$"
+	.string "means to be a TRAINER.\p"
+	.string "Oh, and I think you should have this!$"
+	
+LittlerootTown_ProfessorBirchsLab_Text_InfiniteCandy:
+	.string "PROF. BIRCH: With that Infinicandy, you\n"
+	.string "can level up your POKéMON for free.\p"
+	.string "I'm sure you'll find it quite useful\n"
+	.string "in your travels!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
 	.string "PROF. BIRCH: Oh, don't be that way.\n"
