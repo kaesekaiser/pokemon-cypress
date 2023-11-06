@@ -10259,16 +10259,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .party = TRAINER_PARTY(sParty_MayLinkPlaceholder),
     },
-	
-	[TRAINER_SWORDS_DANCE_TRAINER] =
-	{
-		.trainerClass = TRAINER_CLASS_COOLTRAINER,
-		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-		.trainerPic = TRAINER_PIC_COOLTRAINER_M,
-		.trainerName = _("DON"),
-		.items = {},
-		.doubleBattle = FALSE,
-		.aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-		.party = TRAINER_PARTY(sParty_SwordsDanceTrainer)
-	}
+
+    [TRAINER_SWORDS_DANCE_TRAINER] =
+    {
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = _("DON"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_SwordsDanceTrainer)
+    }
 };
