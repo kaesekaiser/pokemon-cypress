@@ -11804,3 +11804,16 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMon sParty_SwordsDanceTrainer[] = {
+	{
+    .lvl = 20,
+    .species = SPECIES_GALLADE,
+    .moves = {MOVE_SACRED_SWORD, MOVE_PSYCHO_CUT, MOVE_LEAF_BLADE, MOVE_SWORDS_DANCE}
+    },
+	{
+    .lvl = 20,
+    .species = SPECIES_AEGISLASH,
+    .moves = {MOVE_IRON_HEAD, MOVE_SHADOW_CLAW, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
+    }
+};
