@@ -17,6 +17,8 @@ LittlerootTown_BrendansHouse_2F_OnTransition:
 LittlerootTown_BrendansHouse_2F_EventScript_InitGame::
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_POKENAV
 	setvar VAR_0x8004, 5
 	setvar VAR_0x8005, 8
 	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10

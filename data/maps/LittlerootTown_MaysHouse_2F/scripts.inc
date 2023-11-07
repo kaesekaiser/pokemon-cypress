@@ -17,6 +17,8 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 LittlerootTown_MaysHouse_2F_EventScript_InitGame::
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_POKENAV
 	setvar VAR_0x8004, 14
 	setvar VAR_0x8005, 8
 	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
