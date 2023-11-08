@@ -127,9 +127,9 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
 	if (gSaveBlock2Ptr->playerGender == 0)
-		SetWarpDestination(MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_2F), MAP_NUM(LITTLEROOT_TOWN_BRENDANS_HOUSE_2F), WARP_ID_NONE, 1, 4);
+		SetWarpDestination(MAP_GROUP(SPRINGLEAF_TOWN), MAP_NUM(SPRINGLEAF_TOWN), WARP_ID_NONE, 39, 14);
 	else
-		SetWarpDestination(MAP_GROUP(LITTLEROOT_TOWN_MAYS_HOUSE_2F), MAP_NUM(LITTLEROOT_TOWN_MAYS_HOUSE_2F), WARP_ID_NONE, 7, 4);
+		SetWarpDestination(MAP_GROUP(SPRINGLEAF_TOWN), MAP_NUM(SPRINGLEAF_TOWN), WARP_ID_NONE, 39, 14);
     WarpIntoMap();
 }
 

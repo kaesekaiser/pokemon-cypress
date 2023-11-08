@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRINGLEAF_TOWN",
+      "name": "SpringleafTown_Layout",
+      "width": 52,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/SpringleafTown/border.bin",
+      "blockdata_filepath": "data/layouts/SpringleafTown/map.bin"
     }
   ]
 }
