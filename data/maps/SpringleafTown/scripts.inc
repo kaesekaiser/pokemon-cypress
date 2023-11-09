@@ -4,11 +4,7 @@ SpringleafTown_MapScripts::
 
 SpringleafTown_EventScript_OnTransition::
 	setflag FLAG_SYS_B_DASH
-	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_POKENAV_GET
-	setflag FLAG_RECEIVED_POKENAV
-	setflag FLAG_BADGE05_GET  // to enable Surf
-	setflag FLAG_DEFEATED_PETALBURG_GYM
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setrespawn HEAL_LOCATION_SPRINGLEAF_TOWN
 	end
@@ -19,8 +15,6 @@ SpringleafTown_EventScript_GetStarter::
 	setflag FLAG_SYS_POKEMON_GET
 	givemon SPECIES_POPPLIO, 5
 	giveitem ITEM_INFINITE_CANDY
-	playfanfare MUS_OBTAIN_ITEM
-	waitfanfare
 	msgbox SpringleafTown_Text_ThatShouldHelp, MSGBOX_DEFAULT
 	closemessage
 	end
