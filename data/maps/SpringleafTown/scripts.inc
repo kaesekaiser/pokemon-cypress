@@ -10,6 +10,7 @@ SpringleafTown_EventScript_OnTransition::
 	setflag FLAG_BADGE05_GET  // to enable Surf
 	setflag FLAG_DEFEATED_PETALBURG_GYM
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setrespawn HEAL_LOCATION_SPRINGLEAF_TOWN
 	end
 
 SpringleafTown_EventScript_GetStarter::
