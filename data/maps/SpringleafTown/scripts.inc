@@ -18,10 +18,17 @@ SpringleafTown_EventScript_GetStarter::
 	msgbox SpringleafTown_Text_AlsoYouGotAPopplio, MSGBOX_DEFAULT
 	setflag FLAG_SYS_POKEMON_GET
 	givemon SPECIES_POPPLIO, 5
+	giveitem ITEM_INFINITE_CANDY
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
+	msgbox SpringleafTown_Text_ThatShouldHelp, MSGBOX_DEFAULT
 	closemessage
 	end
 	
 SpringleafTown_Text_AlsoYouGotAPopplio::
-	.string "Also, here's a Popplio!$"
+	.string "Also, here's a Popplio!\n"
+	.string "And an Infinicandy to go with it.$"
+
+SpringleafTown_Text_ThatShouldHelp::
+	.string "That should help get you started\n"
+	.string "on your journey. Have fun!$"

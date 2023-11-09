@@ -15,6 +15,14 @@
       "y": 9,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_CEDAR_CROSSING",
+      "name": "CEDAR CROSSING",
+      "x": 23,
+      "y": 8,
+      "width": 1,
+      "height": 1
     }
   ]
 }
