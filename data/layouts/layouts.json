@@ -4434,8 +4434,8 @@
     {
       "id": "LAYOUT_CEDAR_CROSSING",
       "name": "CedarCrossing_Layout",
-      "width": 32,
-      "height": 32,
+      "width": 36,
+      "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/CedarCrossing/border.bin",

@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "map_section": "MAPSEC_SPRINGLEAF_TOWN",
-      "name": "SPRINGLEAF TOWN",
+      "name": "Springleaf Town",
       "x": 23,
       "y": 10,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_1",
-      "name": "ROUTE 1",
+      "name": "Route 1",
       "x": 23,
       "y": 9,
       "width": 1,
@@ -18,7 +18,7 @@
     },
     {
       "map_section": "MAPSEC_CEDAR_CROSSING",
-      "name": "CEDAR CROSSING",
+      "name": "Cedar Crossing",
       "x": 23,
       "y": 8,
       "width": 1,
