@@ -1,12 +1,12 @@
 {
-  "id": "MAP_CEDAR_CROSSING",
-  "name": "CedarCrossing",
-  "layout": "LAYOUT_CEDAR_CROSSING",
-  "music": "MUS_OLDALE",
-  "region_map_section": "MAPSEC_CEDAR_CROSSING",
+  "id": "MAP_ROUTE2",
+  "name": "Route2",
+  "layout": "LAYOUT_ROUTE2",
+  "music": "MUS_ROUTE101",
+  "region_map_section": "MAPSEC_ROUTE_2",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_TOWN",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,14 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE1",
+      "map": "MAP_CEDAR_CROSSING",
       "offset": 6,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_ROUTE2",
-      "offset": -6,
-      "direction": "right"
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_CEDAR_CROSSING",
-      "offset": -8,
+      "offset": -6,
       "direction": "up"
     }
   ],
@@ -28,7 +28,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 14,
-      "y": 2,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,

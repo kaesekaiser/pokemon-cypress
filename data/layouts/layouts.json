@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
       "width": 20,
-      "height": 30,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route1/border.bin",
@@ -4434,12 +4434,22 @@
     {
       "id": "LAYOUT_CEDAR_CROSSING",
       "name": "CedarCrossing_Layout",
-      "width": 36,
-      "height": 28,
+      "width": 32,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/CedarCrossing/border.bin",
       "blockdata_filepath": "data/layouts/CedarCrossing/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2",
+      "name": "Route2_Layout",
+      "width": 62,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Route",
+      "border_filepath": "data/layouts/Route2/border.bin",
+      "blockdata_filepath": "data/layouts/Route2/map.bin"
     }
   ]
 }

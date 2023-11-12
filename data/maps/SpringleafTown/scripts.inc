@@ -15,6 +15,7 @@ SpringleafTown_EventScript_GetStarter::
 	setflag FLAG_SYS_POKEMON_GET
 	givemon SPECIES_POPPLIO, 5
 	giveitem ITEM_INFINITE_CANDY
+	giveitem ITEM_POKE_BALL, 10
 	msgbox SpringleafTown_Text_ThatShouldHelp, MSGBOX_DEFAULT
 	closemessage
 	end
