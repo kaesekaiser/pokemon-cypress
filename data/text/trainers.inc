@@ -4806,3 +4806,18 @@ TMTrainer_Text_TM51_TakeThis:
 TMTrainer_Text_TM51_PostBattle::
 	.string "TM51 contains Swords Dance.\n"
 	.string "It sharply boosts the user's Atk.!$"
+
+VSSeeker_Text_BatteryNotChargedNeedXSteps::
+	.string "The battery isn't charged enough.\p"
+	.string "No. of steps required to fully\n"
+	.string "charge the battery: {STR_VAR_1}{PAUSE_UNTIL_PRESS}$"
+
+VSSeeker_Text_NoTrainersWithinRange::
+	.string "There are no Trainers within range\n"
+	.string "who can battle…\p"
+	.string "The VS Seeker was turned off.{PAUSE_UNTIL_PRESS}$"
+
+VSSeeker_Text_TrainersNotReady::
+	.string "The other Trainers don't appear\n"
+	.string "to be ready for battle.\p"
+	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
