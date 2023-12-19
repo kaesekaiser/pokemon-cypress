@@ -5472,7 +5472,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
-        if (gSpecialVar_ItemId == 799)
+        if (gSpecialVar_ItemId == 816)
             cannotUseEffect = ExecuteTableBasedItemEffect(mon, 102, gPartyMenu.slotId, 0);
         else
             cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -5515,7 +5515,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        if (gSpecialVar_ItemId != 799)
+        if (gSpecialVar_ItemId != 816)
             RemoveBagItem(gSpecialVar_ItemId, 1);
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)
