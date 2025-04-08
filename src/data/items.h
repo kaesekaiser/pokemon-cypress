@@ -138,6 +138,10 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+static const u8 sRareCandyDesc[]      = _("Raises the level\n"
+                                          "of a Pokémon by\n"
+                                          "one.");
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -1917,10 +1921,7 @@ const struct Item gItemsInfo[] =
         .name = _("Rare Candy"),
         .pluralName = _("Rare Candies"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
-        .description = COMPOUND_STRING(
-            "Raises the level\n"
-            "of a Pokémon by\n"
-            "one."),
+        .description = sRareCandyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
@@ -11177,7 +11178,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_SWORDS_DANCE, // Todo
     },
 
     [ITEM_TM52] =
@@ -13602,6 +13603,18 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_BerserkGene,
     },
 
+    [ITEM_INFINITE_CANDY] = 
+    {
+        .name = _("Infinicandy"),
+        .price = 0,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .iconPic = gItemIcon_RareCandy,
+        .iconPalette = gItemIconPalette_RareCandy,
+    },
+    
     [ITEM_FAIRY_FEATHER] =
     {
         .name = _("Fairy Feather"),

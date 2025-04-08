@@ -909,6 +909,34 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	delay 30
 	return
 
+TMTrainer_EventScript_TM51::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM51, TMTrainer_EventScript_TM51_PostBattle
+	msgbox TMTrainer_Text_TM51_Approach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, TMTrainer_EventScript_TM51_Declined
+	trainerbattle_single TRAINER_SWORDS_DANCE_TRAINER, TMTrainer_Text_TM51_Accepted, TMTrainer_Text_TM51_Defeat, TMTrainer_EventScript_TM51_Defeated
+	call TMTrainer_EventScript_TM51_PostBattle
+	end
+
+TMTrainer_EventScript_TM51_Declined::
+	msgbox TMTrainer_Text_TM51_Declined, MSGBOX_DEFAULT
+	closemessage
+	release
+	return
+
+TMTrainer_EventScript_TM51_Defeated::
+	msgbox TMTrainer_Text_TM51_TakeThis, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM51
+	giveitem ITEM_TM51
+	end
+	
+TMTrainer_EventScript_TM51_PostBattle::
+	msgbox TMTrainer_Text_TM51_PostBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"

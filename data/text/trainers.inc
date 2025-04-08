@@ -4780,6 +4780,33 @@ Route134_Text_HudsonPostBattle:
 	.string "My buddy's a timid fellow, so I'm\n"
 	.string "worried about him.$"
 
+TMTrainer_Text_TM51_Approach:
+	.string "Painfully sharp!\n"
+	.string "Relentlessly honed!\p"
+	.string "I am the master of the Swords Dance\n"
+	.string "TM! Will you challenge me?$"
+
+TMTrainer_Text_TM51_Declined:
+	.string "So be it. I will be here\n"
+	.string "when you're ready.$"
+
+TMTrainer_Text_TM51_Accepted:
+	.string "Let us dance a beautiful dance!\n"
+	.string "En garde!$"
+
+TMTrainer_Text_TM51_Defeat:
+	.string "So captivating!\n"
+	.string "Such finesse!\p"
+	.string "I could not match your footwork.$"
+
+TMTrainer_Text_TM51_TakeThis:
+	.string "Color me impressed!\n"
+	.string "You've earned this TM.$"
+
+TMTrainer_Text_TM51_PostBattle::
+	.string "TM51 contains Swords Dance.\n"
+	.string "It sharply boosts the user's Atk.!$"
+
 VSSeeker_Text_BatteryNotChargedNeedXSteps::
 	.string "The battery isn't charged enough.\p"
 	.string "No. of steps required to fully\n"
