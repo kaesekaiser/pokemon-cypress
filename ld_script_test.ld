@@ -12,19 +12,36 @@ MEMORY
 }
 
 SECTIONS {
-    ewram 0x2000000 (NOLOAD) :
+
+    .ewram ORIGIN(EWRAM) : AT (__ewram_lma)
     ALIGN(4)
     {
-        src/*.o(ewram_data);
-        gflib/*.o(ewram_data);
-        test/*.o(ewram_data);
+        __ewram_start = .;
+        *(.ewram*)
+        __ewram_end = .;
     } > EWRAM
 
-    iwram 0x3000000 (NOLOAD) :
+    .ewram.sbss (NOLOAD) :
+    ALIGN(4)
+    {
+        src/*.o(.sbss);
+        test/*.o(.sbss);
+        . = ALIGN(4);
+    } > EWRAM
+
+    .iwram ORIGIN(IWRAM) : AT (__iwram_lma)
+    ALIGN(4)
+    {
+        __iwram_start = .;
+        *(.iwram*);
+        . = ALIGN(4);
+        __iwram_end = .;
+    } > IWRAM
+
+    .iwram.bss (NOLOAD) :
     ALIGN(4)
     {
         src/*.o(.bss);
-        gflib/*.o(.bss);
         data/*.o(.bss);
         test/*.o(.bss);
         *libc.a:*.o(.bss*);
@@ -33,17 +50,22 @@ SECTIONS {
 
         src/m4a.o(.bss.code);
 
+        src/*.o(common_data);
         src/*.o(COMMON);
-        gflib/*.o(COMMON);
         data/*.o(COMMON);
         test/*.o(COMMON);
         *libc.a:sbrkr.o(COMMON);
+    } > IWRAM
 
-	/* .persistent starts at 0x3007F00 */
-	/* WARNING: This is the end of the IRQ stack, if there's too
-	 * much data it WILL be overwritten. */
-	. = 0x7F00;
-	test/*.o(.persistent);
+    /* .persistent starts at 0x3007F00 */
+    /* WARNING: This is the end of the IRQ stack, if there's too
+     * much data it WILL be overwritten. */
+
+    . = 0x03007F00;
+    .iwram.persistent (NOLOAD) :
+    ALIGN(4)
+    {
+        test/*.o(.persistent);
     } > IWRAM
 
     /* BEGIN ROM DATA */
@@ -56,13 +78,12 @@ SECTIONS {
         src/rom_header_gf.o(.text.*);
         src/rom_header_rhh.o(.text.*);
         src/*.o(.text);
-        gflib/*.o(.text);
     } > ROM =0
 
     script_data :
     ALIGN(4)
     {
-	data/*.o(script_data);
+    data/*.o(script_data);
     } > ROM =0
 
     lib_text :
@@ -78,7 +99,6 @@ SECTIONS {
     ALIGN(4)
     {
         src/*.o(.rodata*);
-        gflib/*.o(.rodata*);
         data/*.o(.rodata*);
     } > ROM =0
 
@@ -97,6 +117,20 @@ SECTIONS {
         src/libisagbprn.o(.rodata);
     } > ROM =0
 
+    .data.iwram :
+    ALIGN(8)
+    {
+        __iwram_lma = .;
+        . = . + (__iwram_end - __iwram_start);
+    } > ROM = 0
+
+    .data.ewram :
+    ALIGN(4)
+    {
+        __ewram_lma = .;
+        . = . + (__ewram_end - __ewram_start);
+    } > ROM = 0
+
     tests :
     ALIGN(4)
     {
@@ -108,6 +142,12 @@ SECTIONS {
     } > ROM =0
 
     __rom_end = .;
+
+    dacs 0x9FFC000 :
+    ALIGN(4)
+    {
+        test/*.o(.dacs);
+    } > ROM =0
 
     /* DWARF debug sections.
        Symbols in the DWARF debugging sections are relative to the beginning
